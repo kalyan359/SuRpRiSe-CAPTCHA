@@ -77,8 +77,9 @@
 function myFunction()
 {
 	var stringlen = Math.ceil(Math.random()*10))%10
-	document.write('What is the value that you see?' + stringlen)
+	return stringlen	
 }
+document.getElementById("demo").innerHTML=myFunction();
 </script>
 
 <body>
@@ -97,7 +98,8 @@ function myFunction()
 	  <ul>
 	  	<li>Please stay tuned. </li>
 	  </ul>
-		<button onclick="myFunction()">Try it</button>	 
+		<p>This example calls a function which perfoms a calculation, and returns the result. Please enter it.</p>
+		<p id="demo"></p>	 
 	</div>
 	<span id="local"> This page is built on node-<span id="version"></small></span>	
   </div>

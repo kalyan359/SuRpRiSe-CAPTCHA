@@ -97,7 +97,7 @@ function myFunction()
 	  <ul>
 	  	<li>Please stay tuned. </li>
 	  </ul>
-		//<button onclick="myFunction()">Try it</button>	 
+		<button onclick="myFunction()">Try it</button>	 
 	</div>
 	<span id="local"> This page is built on node-<span id="version"></small></span>	
   </div>
