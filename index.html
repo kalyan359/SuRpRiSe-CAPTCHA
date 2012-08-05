@@ -74,13 +74,6 @@
   </style>
 </head>
 <body>
-<script type="text/javascript">
-function myFunction(a,b)
-{
-	return a*b;
-}
-document.getElementById("demo").innerHTML=myFunction(1,9);
-</script>
 <div id="main-wrapper">
   <div id="wrapper" class="rocket box">
     <div id="rocket">
@@ -97,7 +90,14 @@ document.getElementById("demo").innerHTML=myFunction(1,9);
 	  	<li>Please stay tuned. </li>
 	  </ul>
 		<p>This example calls a function which perfoms a calculation, and returns the result. Please enter it.</p>
-		<p id="demo"></p>	 
+		<p id="demo"></p>
+		<script type="text/javascript">
+		function myFunction(a,b)
+		{
+			return a*b;
+		}
+		document.getElementById("demo").innerHTML=myFunction(1,9);
+		</script>	 
 	</div>
 	<span id="local"> This page is built on node-<span id="version"></small></span>	
   </div>
