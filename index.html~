@@ -76,7 +76,8 @@
 <script type="text/javascript">
 function myFunction()
 {
-alert("Hello World!");
+	var stringlen = Math.ceil(Math.random()*10))%10
+	document.write('What is the value that you see?' + stringlen)
 }
 </script>
 
@@ -96,7 +97,7 @@ alert("Hello World!");
 	  <ul>
 	  	<li>Please stay tuned. </li>
 	  </ul>
-		<button onclick="myFunction()">Try it</button>	 
+		//<button onclick="myFunction()">Try it</button>	 
 	</div>
 	<span id="local"> This page is built on node-<span id="version"></small></span>	
   </div>
