@@ -98,7 +98,7 @@
       <input type="text" name="email" id="email" size="30" />
     </p>
     <p>
-      <label for="code">Write code below > <span id="txtCaptchaDiv" style="color:#F00"></span>
+      <label for="code">Write the summation below > <span id="txtCaptchaDiv" style="color:#F00"></span>
       <input type="hidden" id="txtCaptcha" /></label>
       <input type="text" name="txtInput" id="txtInput" size="30" />
     </p>
@@ -170,8 +170,6 @@ function removeSpaces(string){
 }
 	
 </script>
-
-
     </div>
 	<span id="local"> This page is built on node-<span id="version"></small></span>	
   </div>
@@ -196,6 +194,5 @@ window.onload = function(){
 
 </script>
 </head>
-
 </body>
 </html>
