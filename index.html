@@ -83,22 +83,85 @@
       <h2>SuRpRiSe CAPTCHA!</h2>
       <p>This is a novel project of Experimental Computer Science Lab at Stony Brook University.</p>
       <br />
-    </div>
-    <div id="login-status">
-	  <h3>This page will soon have a very simple novel SuRpiSE CAPTHCHA.</h3>
-	  <ul>
-	  	<li>Please stay tuned. </li>
-	  </ul>
-		<p>This example calls a function which perfoms a calculation, and returns the result. Please enter it.</p>
-		<p id="demo"></p>
-		<script type="text/javascript">
-		function myFunction(a,b)
-		{
-			return Math.ceil(Math.random()*10);
+<form id="form3" action="#" method="post" onsubmit="return checkform(this);">
+  <h3><span>Try Surprise CAPCTHA</span></h3>
+  <fieldset>
+    <legend>Surprise CAPCTHA</legend>
+    <p class="first">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" size="30" />
+    </p>
+    <p>
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" size="30" />
+    </p>
+    <p>
+      <label for="code">Write code below > <span id="txtCaptchaDiv" style="color:#F00"></span><!-- this is where the script will place the generated code --> 
+      <input type="hidden" id="txtCaptcha" /></label><!-- this is where the script will place a copy of the code for validation: this is a hidden field -->
+      <input type="text" name="txtInput" id="txtInput" size="30" />
+    </p>
+  </fieldset>
+  <fieldset class="last">
+    <p>
+      <label for="message">Message</label>
+      <textarea name="message" id="message" cols="30" rows="10"></textarea>
+    </p>
+  </fieldset>
+  <p class="submit">
+    <button type="submit">Send</button>
+  </p>
+</form>
+
+<script type="text/javascript">
+//Generates the captcha function    
+	var a = Math.ceil(Math.random() * 9)+ '';
+	var b = Math.ceil(Math.random() * 9)+ '';       
+	var c = Math.ceil(Math.random() * 9)+ '';  
+	var d = Math.ceil(Math.random() * 9)+ '';  
+	var e = Math.ceil(Math.random() * 9)+ '';  
+	  
+	var code = a + b + c + d + e;
+	document.getElementById("txtCaptcha").value = code;
+	document.getElementById("txtCaptchaDiv").innerHTML = code;	
+</script>
+<script type="text/javascript">
+function checkform(theform){
+	var why = "";
+	 
+	if(theform.txtInput.value == ""){
+		why += "- Security code should not be empty.\n";
+	}
+	if(theform.txtInput.value != ""){
+		if(ValidCaptcha(theform.txtInput.value) == false){
+			why += "- Security code did not match.\n";
 		}
-		document.getElementById("demo").innerHTML=myFunction(1,9);
-		</script>	 
-	</div>
+	}
+	if(why != ""){
+		alert(why);
+		return false;
+	}
+}
+	
+// Validate the Entered input aganist the generated security code function   
+function ValidCaptcha(){
+	var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+	var str2 = removeSpaces(document.getElementById('txtInput').value);
+	if (str1 == str2){
+		return true;	
+	}else{
+		return false;
+	}
+}
+
+// Remove the spaces from the entered and generated code
+function removeSpaces(string){
+	return string.split(' ').join('');
+}
+	
+</script>
+
+
+    </div>
 	<span id="local"> This page is built on node-<span id="version"></small></span>	
   </div>
 </div>
