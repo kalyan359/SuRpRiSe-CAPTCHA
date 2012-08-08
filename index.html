@@ -114,14 +114,20 @@
 
 <script type="text/javascript">
 //Generates the captcha function    
-	var a = Math.ceil(Math.random() * 9)+ '';
-	var b = Math.ceil(Math.random() * 9)+ '';       
-	var c = Math.ceil(Math.random() * 9)+ '';  
-	var d = Math.ceil(Math.random() * 9)+ '';  
-	var e = Math.ceil(Math.random() * 9)+ '';  
-	  
-	var code = a + b + c + d + e;
-	document.getElementById("txtCaptcha").value = code;
+	var strlen = Math.ceil(Math.random() * 9);
+	var code = '';
+	var summation = 0;	
+	for( i=0;i<strlen;i++){
+		var a = Math.ceil(Math.random() * 9)+ '+';
+		var code = code + a;
+		var summation = summation + parseInt(a,10);
+	}
+	var len = code.length;
+    	if (code.substr(len-1,1) == ",") {
+        	code = code.substring(0,len-1);
+    	}
+	document.getElementById("txtCaptcha").value = summation.toString();
+	alert('summation.toString()');
 	document.getElementById("txtCaptchaDiv").innerHTML = code;	
 </script>
 <script type="text/javascript">
