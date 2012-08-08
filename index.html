@@ -135,6 +135,9 @@ function checkform(theform){
 		if(ValidCaptcha(theform.txtInput.value) == false){
 			why += "- Security code did not match.\n";
 		}
+		else{
+			alert("Success");
+		}		
 	}
 	if(why != ""){
 		alert(why);
